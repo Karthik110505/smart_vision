@@ -1,0 +1,6 @@
+opencv-python
+streamlit
+numpy
+inference-sdk
+pytesseract
+collections  # This may not be needed since it's part of the Python standard library
