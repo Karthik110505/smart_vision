@@ -4,8 +4,7 @@ import numpy as np
 from collections import Counter
 from inference_sdk import InferenceHTTPClient
 
-# Initialize Inference Clientls
-
+# Initialize Inference Client
 CLIENT = InferenceHTTPClient(
     api_url="https://detect.roboflow.com",
     api_key="VDWdiDCrMynoYfeMyEeC"
@@ -13,6 +12,38 @@ CLIENT = InferenceHTTPClient(
 
 # Title for the Streamlit app
 st.title("Grocery Item Detection")
+
+# Display the information about the trained classes
+trained_classes = """
+The recognition model is trained on the following grocery items:
+- Chocolatechip cookie
+- Coca Cola Can 250ml
+- Colgate 75g
+- Fanta 500ml
+- Fresher Guava Nectar 500ml
+- Fruita Vitals Red Grapes 200ml
+- Islamabad Tea 238g
+- Kolson Slanty Jalapeno 18g
+- LU Candi Biscuit Half Roll
+- LU Prince Biscuit Half Roll
+- Lays Masala
+- Lays Wavy Mexican Chili 34gm
+- Lifebuoy Soap
+- Lipton Yellow Label Tea
+- Meezan Ultra Rich Tea 190g
+- Oreo Biscuit Half Roll
+- Safeguard Soap Bar
+- Shezan Apple 250ml
+- Sooper Biscuit Ticky Pack
+- Sunsilk Shampoo 160ml
+- Super Crisp BBQ 30gm
+- Supreme Tea 95g
+- Tapal Danedar 95g
+- Vaseline Lotion 100ml
+- Kurkure Chutney
+"""
+
+st.info(trained_classes)
 
 # Upload image using Streamlit file uploader
 uploaded_file = st.file_uploader("Upload an image", type=["png", "jpg", "jpeg"])
@@ -30,7 +61,7 @@ if uploaded_file is not None:
     # Perform inference
     result = CLIENT.infer(temp_image_path, model_id="grocery-dataset-q9fj2/5")
     predictions = result.get('predictions', [])
-    
+
     # Initialize a counter for the frequency of each class
     class_counter = Counter()
 
