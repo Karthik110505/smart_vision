@@ -76,13 +76,14 @@ Once you run the **Freshness Detection** app, upload an image of fruits/vegetabl
 - **Semirotten**: Low freshness score (50%).
 - **Rotten**: Very low freshness score (25%).
 
-The app also displays bounding boxes around detected items, and labels them with their freshness levels.
+The app also displays bounding boxes around detected items, and labels them with their freshness levels. [View the freshness detection model](https://universe.roboflow.com/kella/freshness-nnryh/model/1).
 
 ### 2️⃣ Expiry Date Detection (OCR)
-Upload a product label image containing expiry date information. The app will use OCR to extract and display the detected expiry date.
+Upload a product label image containing expiry date information. The app will use OCR to extract and display the detected expiry date. [View the expiry date detection model](https://universe.roboflow.com/abhilashasacademicworkspace-8igt2/expiry-date-detection-ssxnm/model/1).
 
 ### 3️⃣ Grocery Item Detection
-Upload an image containing grocery items. The app will detect and count the types of grocery items in the image, drawing bounding boxes around them and displaying their counts.
+Upload an image containing grocery items. The app will detect and count the types of grocery items in the image, drawing bounding boxes around them and displaying their counts.  [View the grocery item detection model](https://universe.roboflow.com/new-workspace-wfzw3/grocery-dataset-q9fj2/model/5).
+
 
 ## 📧 Contact
 
