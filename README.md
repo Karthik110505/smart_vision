@@ -31,6 +31,17 @@ First, clone the repository to your local machine:
     ```bash
     pip install -r requirements.txt
     ```
+## Tesseract Path Configuration
+
+Before running the `ocr_check/main.py` file, ensure that Tesseract is properly installed on your system. You must update the Tesseract path in the code to point to the correct installation directory on your machine. If you're on Windows, follow these steps:
+
+- Install Tesseract from the [official website](https://github.com/tesseract-ocr/tesseract).
+- After installation, find the installation path (e.g., `C:/Program Files/Tesseract-OCR/tesseract.exe`).
+- Update the code in `ocr_check/main.py` with the correct path:
+
+  ```python
+  pytesseract.pytesseract.tesseract_cmd = r'C:/Program Files/Tesseract-OCR/tesseract.exe'
+
 3. **Running the OCR Expiry Detection**
 To test the OCR functionality for extracting expiry dates from images, navigate to the ocr_check directory and run the main.py file:
     ```bash
